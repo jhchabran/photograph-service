@@ -15,7 +15,7 @@ module Photograph
       end
 
       get '/' do
-        json :version => Photograph::VERSION
+        json :version => Photograph::Service::VERSION
       end
 
       get '/shoot' do
@@ -24,7 +24,7 @@ module Photograph
           :y   => params["y"].to_i,
           :w   => params["w"].to_i,
           :h   => params["h"].to_i,
-          :wait => params["wait"].to_f,
+          :sleep => (params["sleep"] || params["wait"]).to_f,
           :selector => params["selector"],
           :browser => browser
 

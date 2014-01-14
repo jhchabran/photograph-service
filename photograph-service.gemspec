@@ -21,8 +21,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'sinatra'
   spec.add_dependency 'sinatra-contrib'
   spec.add_dependency 'thin'
-  spec.add_dependency 'photograph', '>= 0.0.5'
+  spec.add_dependency 'photograph', '>= 0.0.6'
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+
+  gem.post_install_message = 'DEPRECATION: wait parameter had been renamed to sleep. Wait parameter will be ignored in the next version.'
 end
